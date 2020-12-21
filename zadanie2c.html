@@ -12,9 +12,9 @@ var osoby = [ "Magda", "Mateusz", "Grzegorz", "Andrzej", "Eugeniusz", "Jacek" ]
 
 var lo = document.querySelector("#listaosob")
 
-for ( var i in osoby ){
+for ( var osoba of osoby ){
     var el = document.createElement("li")
-    el.innerText = osoby[i]
+    el.innerText = osoba
     lo.append(el)
 }
 
