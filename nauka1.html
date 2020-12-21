@@ -18,15 +18,17 @@
         </style>
     </head>
     <body>
+
         <h1>Tytuł strony</h1>
         <h2>Tralalala</h2>
-
-        <script>
-            document.write("<p>Halo halo halo</p>")
-        </script>
 
         <p class="wazne">Trzeci akapit</p>
 
         <p id="hej">Hej</p>
+        <script>
+            // document.write("<p>Halo halo halo</p>")
+            var aaa = document.querySelector("#hej")
+            aaa.innerText = "Halo halo"
+        </script>
     </body>
 </html>
