@@ -24,6 +24,11 @@
     <button onclick="jest_niewazne()">NIE JEST WAŻNE</button>
 </div>
 
+<div>
+    <label>Podaj liczbę: <input id=n onkeyup="wpisz_x()"></label>
+    <p id='wyn'></p>
+</div>
+
 <h1>Funkcje</h1>
 
 <script>
@@ -33,5 +38,14 @@
 
     function jest_niewazne(){
         document.querySelector("h1").classList.remove("wazne")
+    }
+
+    function wpisz_x(){
+        var w = document.querySelector("#wyn")
+        w.innerText = ""
+        var n = document.querySelector("#n").value
+        for ( var i=0; i<n; i++ ){
+            w.innerText += "X"
+        }
     }
 </script>
