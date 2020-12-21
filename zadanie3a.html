@@ -4,7 +4,7 @@
 
 <h1>Temperatury</h1>
 
-<table id='temperatury'>
+<table id='temperatury' border=1>
 <tr>
     <th>°C</th>
     <th>°F</th>
@@ -15,9 +15,40 @@
 
 <script>
 
-var nowywiersz = document.createElement("tr")
-nowywiersz.innerText = "blablabla"
+function przelicz_C_na_F( tC ){
+    return tC * 1.8 + 32
+}
+function przelicz_C_na_K( tC ){
+    return tC + 273.15
+}
+function odczucie( tC ){
+    if ( tC < 1 ) return "mróz";
+    if ( tC < 10 ) return "zimno";
+    if ( tC < 18 ) return "średnio";
+    if ( tC < 23 ) return "ciepło";
+    return "gorąco";
+}
 
-document.querySelector("#temperatury").append( nowywiersz )
+
+for ( var t = -20; t <= 40; t += 2 ){
+
+    var nowywiersz = document.createElement("tr")
+    var komorkaC = document.createElement("td")
+    var komorkaF = document.createElement("td")
+    var komorkaK = document.createElement("td")
+    var komorkaO = document.createElement("td")
+    
+    komorkaC.innerText = t
+    komorkaF.innerText = przelicz_C_na_F(t).toFixed(2)
+    komorkaK.innerText = przelicz_C_na_K(t).toFixed(2)
+    komorkaO.innerText = odczucie(t)
+
+    nowywiersz.append( komorkaC )
+    nowywiersz.append( komorkaF )
+    nowywiersz.append( komorkaK )
+    nowywiersz.append( komorkaO )
+
+    document.querySelector("#temperatury tbody").append( nowywiersz )
+}
 
 </script>
