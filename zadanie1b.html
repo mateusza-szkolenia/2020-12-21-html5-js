@@ -1,0 +1,45 @@
+<!doctype html>
+
+<style>
+    .wakacje { background-color: #fe0; }
+    .krotki { color: #aaa; }
+</style>
+
+<h1>Zadanie 1</h1>
+
+<ul id="poryroku">
+    <li>styczeń</li>
+    <li>luty</li>
+    <li>marzec</li>
+    <li>kwiecień</li>
+    <li>maj</li>
+    <li>czerwiec</li>
+    <li>lipiec</li>
+    <li>sierpień</li>
+    <li>wrzesień</li>
+    <li>październik</li>
+    <li>listopad</li>
+    <li>grudzień</li>
+</ul>
+
+<script>
+
+var m = document.querySelectorAll("#poryroku li")
+
+for ( var i=0; i < m.length; i++ ){
+    if ( i < 7 ){
+        if ( i % 2 == 1 ){
+            m[i].classList.add("krotki")
+        }
+    }
+    else {
+        if ( i % 2 == 0 ){
+            m[i].classList.add("krotki")
+        }
+    }
+
+    if ( i == 6 || i == 7 ){
+        m[i].classList.add("wakacje")
+    }
+}
+</script>
