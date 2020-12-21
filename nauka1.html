@@ -8,12 +8,15 @@
             p {
                 color: #800040;
             }
-            p.wazne {
+            .wazne {
                 background-color: #ff88ee;
             }
             #hej {
                 color: #fff;
                 background-color: #800040;
+            }
+            .duze {
+                font-size: 20pt;
             }
         </style>
     </head>
@@ -25,10 +28,27 @@
         <p class="wazne">Trzeci akapit</p>
 
         <p id="hej">Hej</p>
+
+        <ul id="poryroku">
+            <li>wiosna</li>
+            <li>lato</li>
+            <li>jesień</li>
+            <li>zima</li>
+        </ul>
+
         <script>
             // document.write("<p>Halo halo halo</p>")
             var aaa = document.querySelector("#hej")
             aaa.innerText = "Halo halo"
+
+            var pory_roku = document.querySelectorAll("#poryroku li");
+            
+            for(var i = 0; i < pory_roku.length; i++){
+                if ( i > 1 ){
+                    pory_roku[i].classList.add("wazne");
+                }
+                pory_roku[i].classList.add("duze")
+            }
         </script>
     </body>
 </html>
