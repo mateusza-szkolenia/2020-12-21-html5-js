@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 
 <style>
-    .wakacje { background-color: #fe0; }
+    #poryroku li[data-wakacje] { background-color: #fe0; }
     .krotki { color: #aaa; }
 </style>
 
@@ -31,9 +31,6 @@ var m = document.querySelectorAll("#poryroku li")
 for ( var i=0; i<m.length; i++){
     if ( m[i].getAttribute("data-n") < 31 ){
         m[i].classList.add("krotki")
-    }
-    if ( m[i].hasAttribute("data-wakacje") ){
-        m[i].classList.add("wakacje")
     }
 }
 
