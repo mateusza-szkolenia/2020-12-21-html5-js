@@ -4,6 +4,18 @@
     <head>
         <meta charset="UTF-8">
         <title>Przykład 1</title>
+        <style>
+            p {
+                color: #800040;
+            }
+            p.wazne {
+                background-color: #ff88ee;
+            }
+            p#hej {
+                color: #fff;
+                background-color: #800040;
+            }
+        </style>
     </head>
     <body>
         <h1>Tytuł strony</h1>
@@ -13,8 +25,8 @@
             document.write("<p>Halo halo halo</p>")
         </script>
 
-        <p>Trzeci akapit</p>
+        <p class="wazne">Trzeci akapit</p>
 
-        <p>Hej</p>
+        <p id="hej">Hej</p>
     </body>
 </html>
