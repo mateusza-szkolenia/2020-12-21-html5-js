@@ -2,6 +2,10 @@
 
 <meta charset="UTF-8">
 
+<style>
+    .ujemne { background-color: #88aaff; }
+</style>
+
 <h1>Temperatury</h1>
 
 <table id='temperatury' border=1>
@@ -29,7 +33,6 @@ function odczucie( tC ){
     return "gorąco";
 }
 
-
 for ( var t = -20; t <= 40; t += 2 ){
 
     var nowywiersz = document.createElement("tr")
@@ -47,6 +50,10 @@ for ( var t = -20; t <= 40; t += 2 ){
     nowywiersz.append( komorkaF )
     nowywiersz.append( komorkaK )
     nowywiersz.append( komorkaO )
+
+    if ( t < 0 ){
+        nowywiersz.classList.add("ujemne")
+    }
 
     document.querySelector("#temperatury tbody").append( nowywiersz )
 }
