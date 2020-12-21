@@ -1,0 +1,39 @@
+<!doctype html>
+<meta charset="UTF-8">
+
+<p id='p1'>...</p>
+<p id='p2'>...</p>
+<p id='p3'>...</p>
+
+<p>Spójrz w konsolę...</p>
+
+<script>
+
+var LICZNIK = 0
+
+function powitanie(imie){
+    console.log("Dzien dobry", imie)
+}
+
+function przelicz_C_na_F( t ){
+    //   0C -->  32F
+    // 100C --> 212F
+    return 1.8 * t + 32
+}
+
+function wpisz( id, tresc ){
+    document.querySelector(id).innerText = tresc
+}
+
+function dopisz( id, tresc ){
+    document.querySelector(id).innerText += tresc
+}
+
+function zwieksz(){
+    var moj_licznik = 777
+    LICZNIK += 1
+    BYLO_ZWIEKSZANE = 111
+}
+
+
+</script>
