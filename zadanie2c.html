@@ -1,0 +1,21 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+
+<h1>Zadanie 2</h1>
+
+<ul id='listaosob'></ul>
+
+<script>
+
+var osoby = [ "Magda", "Mateusz", "Grzegorz", "Andrzej", "Eugeniusz", "Jacek" ]
+
+var lo = document.querySelector("#listaosob")
+
+for ( var i in osoby ){
+    var el = document.createElement("li")
+    el.innerText = osoby[i]
+    lo.append(el)
+}
+
+</script>
