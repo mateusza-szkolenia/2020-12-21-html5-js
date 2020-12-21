@@ -27,5 +27,16 @@
 <script>
 
 var m = document.querySelectorAll("#poryroku li")
+var dlugosci = [31,28,31,30,31,30,31,31,30,31,30,31]
+var wakacje = [0,0,0,0,0,0,1,1,0,0,0,0]
+
+for ( var i=0; i<m.length; i++){
+    if ( dlugosci[i] < 31 ){
+        m[i].classList.add("krotki")
+    }
+    if ( wakacje[i] ){
+        m[i].classList.add("wakacje")
+    }
+}
 
 </script>
