@@ -1,0 +1,28 @@
+<!doctype html>
+
+<meta charset="UTF-8">
+
+<style>
+    .wazne {
+        background-color: #ffe000;
+        font-size: 300%;
+    }
+
+</style>
+
+<div>
+    <button onclick="jest_wazne()">JEST WAŻNE</button>
+    <button onclick="jest_niewazne()">NIE JEST WAŻNE</button>
+</div>
+
+<h1>Funkcje</h1>
+
+<script>
+    function jest_wazne(){
+        document.querySelector("h1").classList.add("wazne")
+    }
+
+    function jest_niewazne(){
+        document.querySelector("h1").classList.remove("wazne")
+    }
+</script>
