@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<p>Spójrz w konsolę</p>
+
+<script>
+    console.log("Uzycie przypisania")
+    var a = [ 1, 3, 5 ]
+    var b = a
+    console.log( "a", a )
+    console.log( "b", a )
+    a[0] = -1
+    console.log("a po modyfikacji:", a )
+    console.log("b po modyfikacji a:", b) // zobaczymy zmodyfikowaną tablicę
+
+    // użycie operatora ...
+
+    console.log("Uzycie operatora ...")
+    var a = [ 1, 3, 5 ]
+    var b = [ ... a ]
+    console.log( "a", a )
+    console.log( "b", a )
+    a[0] = -1
+    console.log("a po modyfikacji:", a )
+    console.log("b po modyfikacji a:", b) // zobaczymy zmodyfikowaną tablicę
+
+    // łączenie tablic
+
+    var male = [ 1, 3, 5 ]
+    var duze = [ 999, 1000, 1001 ]
+    var obie = [ male, duze ]
+    var wszystkie = [ ...male, ...duze ]
+    var male2 = [ -1, ... male, 7 ]
+    console.log( male, duze, obie, wszystkie, male2 )
+
+</script>
