@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<p>Spójrz w konsolę...</p>
+
+<script>
+    var osoba = {
+        "imie" : "Mateusz",
+        firma : "ALX",
+        "prowadzone szkolenia" : [ "JS", "Python", "C", "C++", "git", "Linux", "bash", "HTML", "CSS", "PHP", "SQL" ],
+    }
+
+    console.log( 'osoba:', osoba )
+    console.log( "imie i firma:", osoba.imie + " " + osoba.firma )
+    console.log( 'tematyka szkoleń:', osoba["prowadzone szkolenia"])
+    console.log( 'tematyka szkoleń: ' + osoba["prowadzone szkolenia"])
+    for( var szk of osoba["prowadzone szkolenia"]){
+        console.log(`* ${szk}`)
+
+    }
+
+</script>
