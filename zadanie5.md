@@ -2,6 +2,8 @@
 
 Mając daną poniższą tablicę z obiektami, napisać kod `JS`, który wyświetli te dane jako tabelkę.
 
+Więcej danych testowych: https://mateusza2.github.io/Programowanie/Generatory/uczniowie.html#generated-JSON
+
 ```
 var uczniowie = [
   {
