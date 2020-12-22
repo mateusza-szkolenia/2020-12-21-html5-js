@@ -16,4 +16,20 @@
 
     console.log( trzy_losowe_imiona )
 
+    var losowa_liczba = Math.floor( Math.random() * 3 )
+
+    console.log( "Powinno wyjść 0, 1 albo 2:", losowa_liczba )
+
+    var ciag_losowych = ( new Array(8) )
+        .fill()
+        .map( () => Math.floor( Math.random() * 3 ) )
+
+    console.log(ciag_losowych)
+
+    var ciag_kolejnych = (new Array(10))
+        .fill()
+        .map( (a,b)=>b )
+
+    console.log(ciag_kolejnych)
+
 </script>
