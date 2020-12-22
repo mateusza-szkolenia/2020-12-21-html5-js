@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<style>
+    button { font-size: 30pt; }
+</style>
+
+<span onclick='wszystkie()'>TAJEMNICZA FUNKCJA</span>
+
+<button onclick="dodaj(1)">+1</button>
+<button onclick="dodaj(10)">+10</button>
+<button onclick="dodaj(100)">+100</button>
+<button onclick="dodaj(1000)">+1000</button>
+<button onclick="dodaj(10000)">+10000</button>
+<button onclick="dodaj(100000)">+10000</button>
+
+<div id='stankonta'></div>
+
+<script>
+    var stan = 0
+
+    function dodaj( x ){
+        stan += x
+        odswiez()
+    }
+
+    function odswiez(){
+        document.querySelector("#stankonta").textContent = stan
+    }
+
+    function wszystkie(){
+        /*
+        var przyciski = document.querySelectorAll("button")
+
+        for ( var i = 0; i < przyciski.length; i++ ){
+            przyciski[i].click()
+        }*/
+        document
+            .querySelectorAll("button")
+            .forEach( p => p.click() )
+    }
+
+</script>
