@@ -26,15 +26,18 @@
         }
     }
     */
-   function czy_wieksza_od_6(x){
+    function czy_wieksza_od_6(x){
        return x > 6
-   }
+    }
 
-   var liczby4 = liczby.filter( czy_wieksza_od_6 )
-   console.log(liczby4)
+    var liczby4 = liczby.filter( czy_wieksza_od_6 )
+    console.log(liczby4)
 
-   // lub krócej:
-   var liczby5 = liczby.filter( x => x > 6 )
-   console.log(liczby5)
+    // lub krócej:
+    var liczby5 = liczby.filter( x => x > 6 )
+    console.log(liczby5)
+
+    var liczby6 = liczby5.reduce( (a,b) => a*b )   
+    console.log(liczby6)
 
 </script>
