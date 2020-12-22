@@ -62,6 +62,20 @@ function wyswietl_prymusa( uczniowie, elem ){
     elem.append(t)
 }
 
+/* zapis klasyczny 
+function srednia_ucznia( uczen ){
+    var lista_ocen = uczen.oceny.split(" ").map(x=>parseInt(x))
+    var suma_liczb = function(lista_liczb){
+        return lista_liczb.reduce( (a,b) => a+b )
+    }
+    var srednia_liczb = function( lista_liczb ){
+        return suma_liczb( lista_liczb )/lista_liczb.length
+    }
+    return srednia_liczb( lista_ocen )
+}
+*/
+
+/* zapis funkcyjny */
 function srednia_ucznia( uczen ){
     return ( x => x.reduce((a,b) => a+b)/x.length )( uczen.oceny.split(" ").map(x=>parseInt(x)) )
 }
@@ -77,4 +91,19 @@ function znajdz_prymusa( uczniowie ){
         }
     }
     return prymus
+}
+
+function wyswietl_prymusow( uczniowie, elem ){
+    var t = document.createElement("table")
+    
+    var srednia_max = uczniowie.map( u => srednia_ucznia(u) ).reduce( (a,b) => Math.max(a,b) )
+
+    console.log(srednia_max)
+    var prymusi = uczniowie.filter( u => srednia_ucznia(u) == srednia_max )
+
+    dopisz_naglowki( prymusi[0], t )
+    for ( var u of prymusi ){
+        dopisz_ucznia( u, t )
+    }
+    elem.append(t)
 }
