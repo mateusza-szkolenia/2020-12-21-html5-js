@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<style>
+    .pomaranczowy {
+        background-color: #f90;
+    }
+</style>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<h1>Hello</h1>
+
+<button id='b1'>Kliknij mnie</button>
+
+<ul>
+</ul>
+
+<button id='b2'>Dodaj do listy</button>
+
+<script>
+    $('h1').text("Dzień dobry")
+
+    $('#b1').click( () => $('h1').append("x") )
+
+    $('#b2').click( () => $('ul').append( $('<li>').text("Hej") ) )
+
+    $('button').addClass('pomaranczowy')
+
+</script>
