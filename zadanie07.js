@@ -1,9 +1,6 @@
 var konto = 100.0
-var zaklady = [
-    [3,6,8],
-    [5,7,8],
-    [10,12,13]
-]
+var zaklady = []
+var zwycieska_kombinacja = []
 
 function losowy_uklad(){
     var kule = (new Array(18)).fill().map( (a,b)=>b+1 )
@@ -35,7 +32,7 @@ function wygrana( liczba_trafien ){
 }
 
 function losowanie(){
-    var zwycieska_kombinacja = losowy_uklad()
+    zwycieska_kombinacja = losowy_uklad()
     console.log( "Wylosowano: ", zwycieska_kombinacja )
     for ( var zaklad of zaklady ){
         var ile = ile_trafien( zaklad, zwycieska_kombinacja )
@@ -44,4 +41,9 @@ function losowanie(){
         console.log("Sprawdzam zaklad: ", zaklad, ile, nagr )
     }
     zaklady = []
+}
+
+function obstaw_zaklad( zaklad ){
+    zaklady.push( zaklad )
+    konto -= 3.0
 }
