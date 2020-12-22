@@ -2,6 +2,14 @@
 function wyswietl_uczniow( uczniowie, elem ){
     var t = document.createElement("table")
     
+    var porownaj_in = function( a, b ){
+        var in1 = a.nazwisko + " " + a.imie
+        var in2 = b.nazwisko + " " + b.imie
+        return in1.localeCompare(in2)
+    }
+
+    uczniowie.sort( porownaj_in )
+
     dopisz_naglowki( uczniowie[0], t )
     for ( var u of uczniowie ){
         dopisz_ucznia( u, t )
