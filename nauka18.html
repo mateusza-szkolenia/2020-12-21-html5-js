@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<p>Spójrz w konsolę</p>
+
+<script>
+
+    var imiona = ["Ala","Ula","Ola","Ela","Iza","Ewa","Aga"]
+
+    var trzy_losowe_imiona = imiona
+        .map( x=>[ x, Math.random() ] )
+        .sort( (a,b) => a[1] - b[1] )
+        .map( x => x[0] )
+        .slice(0,3)
+
+    console.log( trzy_losowe_imiona )
+
+</script>
