@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<style>
+    p { font-size: 20pt; padding: 0.5em; }
+    #p1 { border: 2px solid red; }
+    #p2 { border: 2px solid yellow; }
+</style>
+
+<meta charset="UTF-8">
+
+<p id='p1'></p>
+<p id='p2'></p>
+
+
+<script>
+    function wpisz_wartosc( gdzie, co ){
+        document.querySelector(gdzie).textContent = co
+    }
+
+    function wpisz_do_p1( tekst ){
+        wpisz_wartosc("#p1", tekst )
+    }
+
+    function stworz_funkcje_wpisujaca( dokad ){
+        var f = function(tekst){ wpisz_wartosc( dokad, tekst ); }
+        return f
+    }
+
+</script>
