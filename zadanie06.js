@@ -49,6 +49,32 @@ function dopisz_naglowki( obiekt, elem ){
     var nagl = document.createElement("th")
     nagl.innerText = "średnia"
     w.append(nagl)
-    
+
     elem.append(w)
+}
+
+function wyswietl_prymusa( uczniowie, elem ){
+    var t = document.createElement("table")
+    
+    var prymus = znajdz_prymusa( uczniowie )
+    dopisz_ucznia( prymus, t )
+
+    elem.append(t)
+}
+
+function srednia_ucznia( uczen ){
+    return ( x => x.reduce((a,b) => a+b)/x.length )( uczen.oceny.split(" ").map(x=>parseInt(x)) )
+}
+
+function znajdz_prymusa( uczniowie ){
+    var prymus = null
+    var srednia_max = 0.0
+
+    for ( var u of uczniowie ){
+        if ( srednia_ucznia(u) > srednia_max ){
+            prymus = u
+            srednia_max = srednia_ucznia(u)
+        }
+    }
+    return prymus
 }
