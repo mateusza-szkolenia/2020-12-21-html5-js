@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<p>Spójrz w konsolę</p>
+
+<script>
+
+    var imiona = [ "Magdalena", "Mateusz", "Grzegorz", "Andrzej", "Eugeniusz", "Jacek" ]
+    console.log("Przed sortowaniem:", imiona)
+    imiona.sort()
+    console.log("Po sortowaniu:", imiona)
+    imiona.sort(porownaj)
+    console.log("Po sortowaniu wg własnego kryterium:", imiona)
+
+    function porownaj( a, b ){
+        if ( a[1] == b[1] ) return 0;
+        if ( a[1] < b[1] ) return -1;
+        if ( a[1] > b[1] ) return 1;
+    }
+
+    var liczby = [ 1,4,10,101,1005,200,20,21]
+    console.log("Przed sortowaniem:", liczby)
+    liczby.sort()
+    console.log("Po sortowaniu:", liczby)
+    liczby.sort( (a,b) => a-b )
+    console.log("Po sortowaniu prawidłowym:", liczby)
+    
+/*
+    function punkty(imie){
+        return (((imie.length)*(imie.length)*17)-3)%20
+    }
+*/
+
+
+</script>
