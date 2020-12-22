@@ -26,12 +26,16 @@ function dopisz_ucznia( uczen, elem ){
     var ki = document.createElement("td")
     var kn = document.createElement("td")
     var ko = document.createElement("td")
+    var ksr = document.createElement("td")
 
     ki.innerText = uczen.imie
     kn.innerText = uczen.nazwisko
     ko.innerText = uczen.oceny
+    var oceny = uczen.oceny.split(" ").map(x=>parseInt(x))
+    var srednia = oceny.reduce( (a,b)=>a+b )/oceny.length
+    ksr.innerText = srednia.toFixed(2)
 
-    w.append(ki, kn, ko)
+    w.append(ki, kn, ko, ksr)
     elem.append(w)
 }
 
@@ -42,5 +46,9 @@ function dopisz_naglowki( obiekt, elem ){
         nagl.innerText = k
         w.append(nagl)
     }
+    var nagl = document.createElement("th")
+    nagl.innerText = "średnia"
+    w.append(nagl)
+    
     elem.append(w)
 }
