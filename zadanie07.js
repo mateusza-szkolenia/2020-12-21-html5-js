@@ -10,3 +10,15 @@ function losowy_uklad(){
 
     return wylosowane
 }
+
+function ile_trafien( zestaw_a, zestaw_b ){
+    var trafienia = 0
+    for ( var a of zestaw_a ){
+        for ( var b of zestaw_b ){
+            if ( a == b ){
+                trafienia++
+            }
+        }
+    }
+    return trafienia
+}
