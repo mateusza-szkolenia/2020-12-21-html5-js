@@ -22,3 +22,7 @@ function ile_trafien( zestaw_a, zestaw_b ){
     }
     return trafienia
 }
+
+function wygrana( liczba_trafien ){
+    return [ 0, 10.0, 1000.00, 10000.00 ][liczba_trafien]
+}
