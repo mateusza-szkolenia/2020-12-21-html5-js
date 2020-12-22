@@ -2,6 +2,22 @@
 
 <meta charset="UTF-8">
 
+<style>
+    #wylosowane {
+        display: flex;
+    }
+    span.kula {
+        font-size: 30pt;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        display: block;
+        border: 2px solid black;
+        background-color: #ff0;
+        border-radius: 50%;
+    }
+</style>
+
 <script src="zadanie07.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
@@ -14,13 +30,58 @@
 <div id='wylosowane'></div>
 
 <h2>zakład:</h2>
-<input id='liczby'><button id='kup'>obstaw liczby</button>
+<input id='liczby'>
+<button id='kup'>obstaw liczby</button>
+<button id='chybiltrafil'>chybił-trafił</button>
+<button id='losowanie'>LOSOWANIE</button>
 
 <h2>kupony:</h2>
 <ul id='kupony'></ul>
 
 <script>
 
+$('#kup').click( () => {
+    if(konto <= 0){
+        alert("Bankrut")
+        return false
+    }
 
+    var liczby = $('#liczby')
+        .val()
+        .split(" ")
+        .map( x => parseInt(x) )
+        .filter( x => x > 0 && x <= 18 )
+    liczby = [ ... new Set(liczby) ]
+    if ( liczby.length != 3 ){
+        alert("Błędny zakład: " + $('#liczby').val() )
+        return false
+    }
+    obstaw_zaklad( liczby )
+    odswiez()
+} )
+
+$('#chybiltrafil').click( () => {
+    obstaw_zaklad( losowy_uklad() );
+    odswiez()
+} )
+
+$('#losowanie').click( () => {
+    losowanie()
+    odswiez()
+})
+
+function odswiez(){
+    $('#konto').text( konto )
+    $('#kupony').html("")
+    zaklady.forEach( z => {
+        $('#kupony').append( $('<li>').text(z) )
+    })
+    $('#wylosowane').html("")
+    zwycieska_kombinacja.forEach( n => {
+        $('#wylosowane').append( $('<span>').addClass('kula').text(n) )
+    })
+}
+
+$( odswiez )
 
 </script>
