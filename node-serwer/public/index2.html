@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<h1>Witaj</h1>
+
+<pre id='wynik'></pre>
+
+<button id="wczytajbtn" onclick='wczytaj()'>Wczytaj dane</button>
+
+<script>
+function wczytaj(){
+    document.querySelector("#wynik").textContent = "wczytywanie..."
+
+    setTimeout( () => {
+        fetch("/dane.json")
+            .then( x => x.text() ) 
+            .then( t => {
+                document.querySelector( "#wynik" ).textContent = "przetwarzanie danych..."
+                // TO JEST OSZUSTWO :-)
+                setTimeout( () => document.querySelector( "#wynik" ).textContent = t, 1000 )
+            })
+    }, 2000 )
+
+}
+
+</script>
