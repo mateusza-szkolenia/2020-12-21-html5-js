@@ -31,6 +31,9 @@
         try {
             var uczniowie = JSON.parse( document.querySelector("#wejscie").value )
             document.querySelector("#wejscie").classList.remove("blad")
+            if ( uczniowie.length == 0){
+                throw new SyntaxError()
+            }
         }
         catch ( e ){
             //console.log("Wyjątek:", e )
@@ -39,7 +42,6 @@
                 var uczniowie = []
             }
         }
-
         document.querySelector("#wynik").innerHTML = ""
         wyswietl_uczniow( uczniowie, document.querySelector("#wynik") );
     }
