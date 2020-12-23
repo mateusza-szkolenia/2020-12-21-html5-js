@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<h1>Witaj</h1>
+
+<pre id='wynik'></pre>
+
+<button onclick='wczytaj()'>Wczytaj dane</button>
+
+<div id="tankowania"></div>
+
+<script>
+function wczytaj(){
+    fetch("/dane.json")
+        .then( x => x.json() )
+        .then( j => wyswietl_tankowania( j, document.querySelector("#tankowania") ) )
+}
+
+function wyswietl_tankowania( tankowania, elem ){
+    var lista = document.createElement("ol")
+    for ( var tankowanie of tankowania ){
+        var e = document.createElement("li")
+        e.textContent = `[${tankowanie.data}] [${tankowanie.droga}km] [${tankowanie.cena}zł/l] [${tankowanie.paliwo}l] [${tankowanie.cena*tankowanie.paliwo} zł]`
+        lista.append(e)
+    }
+    elem.innerHTML=""
+    elem.append(lista)
+}
+
+</script>
