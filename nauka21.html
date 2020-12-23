@@ -5,6 +5,10 @@
 <script src="zadanie05.js"></script>
 
 <style>
+    .blad {
+        background-color: #ff9999;
+        outline: 4px solid #dd0000;
+    }
     table td { border: 1px solid #000; padding: 0.4em; }
 </style>
 
@@ -24,7 +28,18 @@
 
 <script>
     function akcja(){
-        var uczniowie = JSON.parse( document.querySelector("#wejscie").value )
+        try {
+            var uczniowie = JSON.parse( document.querySelector("#wejscie").value )
+            document.querySelector("#wejscie").classList.remove("blad")
+        }
+        catch ( e ){
+            //console.log("Wyjątek:", e )
+            if ( e instanceof SyntaxError ){
+                document.querySelector("#wejscie").classList.add("blad")
+                var uczniowie = []
+            }
+        }
+
         document.querySelector("#wynik").innerHTML = ""
         wyswietl_uczniow( uczniowie, document.querySelector("#wynik") );
     }
