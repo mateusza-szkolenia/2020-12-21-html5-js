@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+
+<script src="zadanie05.js"></script>
+
+<style>
+    table td { border: 1px solid #000; padding: 0.4em; }
+</style>
+
+<h1>uczniowie</h1>
+<textarea id='wejscie' rows=20 cols=80>
+[
+    {
+        "imie" : "Jan",
+        "nazwisko" : "Kowalski",
+        "oceny" : "5 6 5 4"
+    }
+]
+</textarea>
+<br>
+<button onclick='akcja()'>Przetwarzaj</button>
+<div id="wynik"></div>
+
+<script>
+    function akcja(){
+        var uczniowie = JSON.parse( document.querySelector("#wejscie").value )
+        document.querySelector("#wynik").innerHTML = ""
+        wyswietl_uczniow( uczniowie, document.querySelector("#wynik") );
+    }
+    
+</script>
