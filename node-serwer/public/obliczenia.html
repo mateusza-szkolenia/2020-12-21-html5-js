@@ -1,0 +1,44 @@
+<!doctype html>
+
+<h1>Symulowanie Lotto</h1>
+
+<button onclick="policz()">START SYMULACJI</button>
+
+<script>
+
+function policz(){
+    var N = 300000
+    var trafienia = [ 0, 0, 0, 0, 0, 0, 0 ]
+    var wylosowane = losowy_uklad()
+    console.log("Wylosowane: ", wylosowane )
+    for ( var i = 0; i < N; i++ ){
+        var ile = ile_trafien( wylosowane, losowy_uklad() )
+        trafienia[ile]++
+    }
+    console.log(trafienia.map( x => (N / x).toFixed(1) ))
+}
+
+function losowy_uklad(){
+    return (new Array(49))
+        .fill()
+        .map( (a,b)=>b+1 )
+        .map( x=>[ x, Math.random() ] )
+        .sort( (a,b) => a[1] - b[1] )
+        .map( x => x[0] )
+        .slice(0,6)
+        .sort( (a,b) => a - b )
+}
+
+function ile_trafien( zestaw_a, zestaw_b ){
+    var trafienia = 0
+    for ( var a of zestaw_a ){
+        for ( var b of zestaw_b ){
+            if ( a == b ){
+                trafienia++
+            }
+        }
+    }
+    return trafienia
+}
+    
+</script>
