@@ -2,51 +2,51 @@
 
 <h1>Symulowanie Lotto</h1>
 
+<input type=range min="1" max="6" step="0.1" id='ilein' onchange="suwak()">
+<output id='ileout'></output>
+<br>
+
 <button onclick="start()">START SYMULACJI</button>
+<button onclick="stop()">STOP SYMULACJI</button>
+<br>
+
+<progress id='postep' max="100" value="0"></progress>
+<br>
+
+<pre id='wynik'>
+
+</pre>
 
 <script>
 
+var w1 = new Worker( "worker-lotto.js?x=" + Math.random() )
+w1.onmessage = function(msg){
+    if ( msg.data.stan == "postep" ){
+        document.querySelector("#postep").value = 100 * msg.data.postep
+    }
+    else if ( msg.data.stan == "koniec" ){
+        document.querySelector("#wynik").textContent = msg.data.wynik
+    }
+    console.log( "Wiadomość od workera", msg.data )
+}
+
+function suwak(){
+    var ile = Math.round( Math.pow( 10, document.querySelector("#ilein").value ) )
+    document.querySelector("#ileout").value = ile
+}
+
 function start(){
-    var w1 = new Worker( "worker-lotto.js?x=" + Math.random() )
-    w1.onmessage = function(msg){
-        console.log( "Wiadomość od workera", msg.data )
-    }
-    w1.postMessage("START")
+    w1.postMessage({
+        "operacja" : "start",
+        "ile" : document.querySelector("#ileout").value
+    })
 }
 
-function policz(){
-    var N = 300000
-    var trafienia = [ 0, 0, 0, 0, 0, 0, 0 ]
-    var wylosowane = losowy_uklad()
-    console.log("Wylosowane: ", wylosowane )
-    for ( var i = 0; i < N; i++ ){
-        var ile = ile_trafien( wylosowane, losowy_uklad() )
-        trafienia[ile]++
-    }
-    console.log(trafienia.map( x => (N / x).toFixed(1) ))
+function stop(){
+    w1.postMessage({
+        "operacja" : "stop"
+    })
 }
 
-function losowy_uklad(){
-    return (new Array(49))
-        .fill()
-        .map( (a,b)=>b+1 )
-        .map( x=>[ x, Math.random() ] )
-        .sort( (a,b) => a[1] - b[1] )
-        .map( x => x[0] )
-        .slice(0,6)
-        .sort( (a,b) => a - b )
-}
 
-function ile_trafien( zestaw_a, zestaw_b ){
-    var trafienia = 0
-    for ( var a of zestaw_a ){
-        for ( var b of zestaw_b ){
-            if ( a == b ){
-                trafienia++
-            }
-        }
-    }
-    return trafienia
-}
-    
 </script>
