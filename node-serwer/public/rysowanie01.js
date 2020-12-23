@@ -1,9 +1,11 @@
+function krok_gry(){
+    rysuj()
+    window.requestAnimationFrame( krok_gry )
+}
 function rysuj(){
     var canv = document.querySelector("#cnv")
     var ctx = canv.getContext("2d")
-
     rysuj_bazy( ctx, Gra.bazy )
-
 }
 
 function rysuj_baze( ctx, baza ){
@@ -22,4 +24,4 @@ function rysuj_bazy( ctx, bazy ){
     }
 }
 
-window.onload = rysuj
+window.onload = krok_gry
