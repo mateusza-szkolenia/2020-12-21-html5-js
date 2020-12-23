@@ -13,20 +13,4 @@
 <canvas id='cnv' width="800" height="600"></canvas>
 
 <script>
-function Baza( x, y ){
-    this.x = x
-    this.y = y
-    this.stan = 100
-    this.opiszSie = function(){
-        console.log(`Baza: ${this.x} ${this.y} ${this.stan}`)
-    }
-}
-
-var Gra = {
-    bazy: (new Array(10))
-        .fill()
-        .map( x => new Baza( Math.random() * 800, Math.random() * 600 ) ),
-    celownik: new Celownik(0,0)
-}
-
 </script>
