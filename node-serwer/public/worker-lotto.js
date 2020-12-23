@@ -6,14 +6,8 @@ onmessage = function(msg){
     console.log("Worker otrzymał wiadomość 1:" + msg.data )
 
     if ( operacja == "start" ){
-        this.ZATRZYMAJ = false
         console.log("Zaczynam liczenie")
         var wynik = policz( ile )
-        postMessage( { "stan" : "koniec", "wynik" : wynik })
-    }
-    
-    if ( operacja == "stop" ){
-        this.ZATRZYMAJ = true
         postMessage( { "stan" : "koniec", "wynik" : wynik })
     }
 
@@ -25,11 +19,8 @@ function policz(N){
     for ( var i = 0; i < N; i++ ){
         var ile = ile_trafien( wylosowane, losowy_uklad() )
         trafienia[ile]++
-        if ( i % 10000 == 0 ){
-            if ( this.ZATRZYMAJ ){
-                return []
-            }
-            postMessage( { "stan" : "postep", "postep" : i/N, "ZA" : this.ZATRZYMAJ })
+        if ( i % 20000 == 0 ){
+            postMessage( { "stan" : "postep", "postep" : i/N, "wynik" : trafienia.map( x => (i / x).toFixed(1) ) })
         }
     }
     return trafienia.map( x => (N / x).toFixed(1) )
