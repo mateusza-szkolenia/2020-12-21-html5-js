@@ -3,3 +3,16 @@
 <meta charset="UTF-8">
 
 <h1>Witaj</h1>
+
+<pre id='wynik'></pre>
+
+<button onclick='wczytaj()'>Wczytaj dane</button>
+
+<script>
+function wczytaj(){
+    fetch("/dane.json")
+        .then( x => x.text() )
+        .then( t => document.querySelector( "#wynik" ).textContent = t )
+}
+
+</script>

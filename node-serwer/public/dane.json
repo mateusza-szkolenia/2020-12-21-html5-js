@@ -1,0 +1,128 @@
+[
+    {
+      "data": 1372,
+      "droga": 62796,
+      "paliwo": 15.07,
+      "cena": 4.82
+    },
+    {
+      "data": 1385,
+      "droga": 63053,
+      "paliwo": 15.67,
+      "cena": 4.37
+    },
+    {
+      "data": 1391,
+      "droga": 63510,
+      "paliwo": 31.39,
+      "cena": 4.3
+    },
+    {
+      "data": 1399,
+      "droga": 63763,
+      "paliwo": 21.01,
+      "cena": 5
+    },
+    {
+      "data": 1413,
+      "droga": 64295,
+      "paliwo": 37.39,
+      "cena": 5.08
+    },
+    {
+      "data": 1422,
+      "droga": 64618,
+      "paliwo": 21.63,
+      "cena": 5.07
+    },
+    {
+      "data": 1429,
+      "droga": 65307,
+      "paliwo": 41.62,
+      "cena": 4.79
+    },
+    {
+      "data": 1435,
+      "droga": 65662,
+      "paliwo": 25.67,
+      "cena": 4.73
+    },
+    {
+      "data": 1442,
+      "droga": 66234,
+      "paliwo": 37.88,
+      "cena": 4.52
+    },
+    {
+      "data": 1448,
+      "droga": 66737,
+      "paliwo": 33.08,
+      "cena": 4.53
+    },
+    {
+      "data": 1453,
+      "droga": 67208,
+      "paliwo": 37.63,
+      "cena": 4.44
+    },
+    {
+      "data": 1468,
+      "droga": 67566,
+      "paliwo": 26.95,
+      "cena": 4.95
+    },
+    {
+      "data": 1481,
+      "droga": 67945,
+      "paliwo": 28.8,
+      "cena": 4.96
+    },
+    {
+      "data": 1489,
+      "droga": 68399,
+      "paliwo": 30.45,
+      "cena": 4.55
+    },
+    {
+      "data": 1492,
+      "droga": 68864,
+      "paliwo": 36.02,
+      "cena": 4.59
+    },
+    {
+      "data": 1502,
+      "droga": 69117,
+      "paliwo": 17.09,
+      "cena": 4.72
+    },
+    {
+      "data": 1504,
+      "droga": 69759,
+      "paliwo": 40.06,
+      "cena": 4.94
+    },
+    {
+      "data": 1508,
+      "droga": 70380,
+      "paliwo": 47.91,
+      "cena": 5.04
+    },
+    {
+      "data": 1510,
+      "droga": 70729,
+      "paliwo": 23.15,
+      "cena": 4.86
+    },
+    {
+      "data": 1526,
+      "droga": 70953,
+      "paliwo": 15.98,
+      "cena": 4.3
+    },
+    {
+      "data": 1539,
+      "droga": 71615,
+      "paliwo": 40.43,
+      "cena": 4.78
+    }
+  ]
