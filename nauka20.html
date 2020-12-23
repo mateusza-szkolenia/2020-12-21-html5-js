@@ -1,0 +1,22 @@
+<!doctype html>
+
+<h1>Uczniowie JSON</h1>
+
+<pre id='wynik'>
+---PUSTO---
+</pre>
+
+<script>
+    var uczniowie = [{
+      imie: "Agnieszka",
+      nazwisko: "E.",
+      oceny: [{"typ":"aktywnosc","ocena":2},4,4,4,4,2,3]
+    },
+    {
+      "imie": "Daniel",
+      "nazwisko": "E.",
+      "oceny": [3,6,6,5,5,4,3]
+    }]
+
+    document.querySelector("#wynik").textContent = JSON.stringify(uczniowie)
+</script>
