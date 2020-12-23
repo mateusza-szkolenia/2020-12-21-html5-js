@@ -1,0 +1,3 @@
+Mateusz;XXX;1 2 2 3 6 5
+Maciej;YYY;4 5 6 3 4 5
+Dariusz;ZZZ;5 5 5 5 4 6
