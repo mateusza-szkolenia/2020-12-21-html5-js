@@ -2,9 +2,17 @@
 
 <h1>Symulowanie Lotto</h1>
 
-<button onclick="policz()">START SYMULACJI</button>
+<button onclick="start()">START SYMULACJI</button>
 
 <script>
+
+function start(){
+    var w1 = new Worker( "worker-lotto.js?x=" + Math.random() )
+    w1.onmessage = function(msg){
+        console.log( "Wiadomość od workera", msg.data )
+    }
+    w1.postMessage("START")
+}
 
 function policz(){
     var N = 300000
