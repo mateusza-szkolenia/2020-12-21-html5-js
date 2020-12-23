@@ -1,0 +1,12 @@
+[
+    {
+        "imie": "Agnieszka",
+        "nazwisko": "E.",
+        "oceny": [5,4,4,4,4,2,3]
+    },
+    {
+        "imie": "Daniel",
+        "nazwisko": "E.",
+        "oceny": [3,6,6,5,5,4,3]
+    }
+]
